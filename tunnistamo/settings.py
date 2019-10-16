@@ -27,7 +27,6 @@ X_FRAME_OPTIONS = 'DENY'
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
     'django.contrib.contenttypes',
@@ -40,6 +39,8 @@ INSTALLED_APPS = (
     'oauth2_provider',
     'users',
     'oidc_provider',
+
+    'django.contrib.admin',
 
     'allauth',
     'allauth.account',
@@ -91,11 +92,11 @@ AUTHENTICATION_BACKENDS = (
     'auth_backends.eduhelfi.EduHelFiAzure',
     'auth_backends.espoo.EspooAzure',
     'auth_backends.adfs.helsinki.HelsinkiADFS',
+    'auth_backends.facebook.Facebook',
+    'auth_backends.github.Github',
     'auth_backends.google.GoogleOAuth2CustomName',
     'auth_backends.adfs.helsinki_library_asko.HelsinkiLibraryAskoADFS',
     'yletunnus.backends.YleTunnusOAuth2',
-    'social_core.backends.facebook.FacebookOAuth2',
-    'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
     'auth_backends.suomifi.SuomiFiSAMLAuth',
 )

@@ -2,6 +2,8 @@ import uuid
 
 from auth_backends.adfs.base import BaseADFS
 
+import logging
+logger = logging.getLogger(__name__)
 
 class HelsinkiLibraryAskoADFS(BaseADFS):
     """Helsinki Libraries' ASKO ADFS authentication backend"""
@@ -61,7 +63,7 @@ class HelsinkiLibraryAskoADFS(BaseADFS):
                     val = val.lower()
                 attrs[out_name] = val
             else:
-                print(in_name, 'not found in data')
+                logger.debug(f"'{in_name}' not found in data")
             attrs[out_name] = val
 
         if 'last_first_name' in attrs:

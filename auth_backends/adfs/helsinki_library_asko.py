@@ -5,6 +5,7 @@ from auth_backends.adfs.base import BaseADFS
 import logging
 logger = logging.getLogger(__name__)
 
+
 class HelsinkiLibraryAskoADFS(BaseADFS):
     """Helsinki Libraries' ASKO ADFS authentication backend"""
     name = 'helsinki_library_asko_adfs'

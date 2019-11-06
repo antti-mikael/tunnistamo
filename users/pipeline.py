@@ -1,3 +1,4 @@
+import logging
 import uuid
 
 from django.contrib.auth import get_user_model
@@ -9,8 +10,8 @@ from auth_backends.adfs.base import BaseADFS
 from users.models import LoginMethod
 from users.views import AuthenticationErrorView
 
-import logging
 logger = logging.getLogger(__name__)
+
 
 def get_user_uuid(details, backend, response, user=None, *args, **kwargs):
     """Add `new_uuid` argument to the pipeline.
